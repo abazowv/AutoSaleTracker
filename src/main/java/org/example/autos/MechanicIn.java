@@ -166,7 +166,6 @@ public class MechanicIn extends Component implements Initializable {
 
             Con.setAutoCommit(false);
 
-
             String selectQuery = "SELECT id, brand, model, body_type, trans, service_date, reason, status, price FROM serviced_cars WHERE id = ?";
             int id = 0;
             String brand = null;
@@ -186,8 +185,8 @@ public class MechanicIn extends Component implements Initializable {
                         bodyType = rs.getString("body_type");
                         trans = rs.getString("trans");
                         serviceDate = rs.getString("service_date");
-                        price = rs.getDouble("price"); // Убедимся, что price извлекается
-                        System.out.println("Extracted price: " + price); // Для отладки
+                        price = rs.getDouble("price");
+                        System.out.println("Extracted price: " + price);
                     }
                 }
             }
@@ -202,12 +201,11 @@ public class MechanicIn extends Component implements Initializable {
                 insertStmt.setString(4, bodyType);
                 insertStmt.setString(5, trans);
                 insertStmt.setString(6, "Available");
-                insertStmt.setDouble(7, price); // Передаем извлеченный price
+                insertStmt.setDouble(7, price);
                 insertStmt.setString(8, serviceDate);
 
                 insertStmt.executeUpdate();
             }
-
 
             String deleteQuery = "DELETE FROM serviced_cars WHERE id = ?";
             try (PreparedStatement deleteStmt = Con.prepareStatement(deleteQuery)) {
@@ -215,12 +213,9 @@ public class MechanicIn extends Component implements Initializable {
                 deleteStmt.executeUpdate();
             }
 
-
             Con.commit();
 
-
             DisplayServiceCars();
-
 
             int option = JOptionPane.showConfirmDialog(null, "Do you want to return to the 'To Service' menu?", "Confirm Transition", JOptionPane.YES_NO_OPTION);
             if (option == JOptionPane.YES_OPTION) {
@@ -235,7 +230,7 @@ public class MechanicIn extends Component implements Initializable {
                 currentStage.show();
             }
 
-            JOptionPane.showMessageDialog(null, "Car returned successfully. Price saved: " + price);
+            JOptionPane.showMessageDialog(null, "Car returned successfully.");
 
         } catch (SQLException | IOException e) {
             try {
@@ -252,10 +247,5 @@ public class MechanicIn extends Component implements Initializable {
                 ex.printStackTrace();
             }
         }
-    }
-
-    @FXML
-    public void salaryBtn(ActionEvent actionEvent) {
-        // Пока пусто
     }
 }

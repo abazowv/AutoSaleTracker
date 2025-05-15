@@ -29,10 +29,6 @@ import javax.swing.*;
 import javafx.scene.Scene;
 import javafx.scene.Node;
 
-
-
-
-
 public class SellerController extends Component implements Initializable{
 
     @FXML private Button sellBtn;
@@ -110,8 +106,6 @@ public class SellerController extends Component implements Initializable{
         DisplayCars();
     }
 
-
-
     @FXML
 
     public void sellBtn(ActionEvent actionEvent) {
@@ -144,7 +138,6 @@ public class SellerController extends Component implements Initializable{
 
             insertStmt.executeUpdate();
 
-            // Удаляем из cars
             String deleteQuery = "DELETE FROM cars WHERE id = ?";
             PreparedStatement deleteStmt = Con.prepareStatement(deleteQuery);
             deleteStmt.setInt(1, selectedCar.getId());
@@ -158,9 +151,6 @@ public class SellerController extends Component implements Initializable{
             JOptionPane.showMessageDialog(null, "Error while selling car.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-
-
-
 
 
     @FXML
@@ -184,12 +174,11 @@ public class SellerController extends Component implements Initializable{
     public void goToLogin(MouseEvent mouseEvent) {
         try {
 
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));  // Убедитесь, что путь к файлу правильный
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
             Parent root = fxmlLoader.load();
 
 
             Stage currentStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-
 
             Scene newScene = new Scene(root, 525, 428);
             currentStage.setScene(newScene);
@@ -202,10 +191,5 @@ public class SellerController extends Component implements Initializable{
         }
 
     }
-
-
-
-
-
 }
 

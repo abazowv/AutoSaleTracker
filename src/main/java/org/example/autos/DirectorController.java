@@ -1,6 +1,5 @@
 package org.example.autos;
 
-
 import javafx.fxml.Initializable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,7 +15,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-
 import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
@@ -29,7 +27,6 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
-// Library to work with JTable
 
 
 public class DirectorController extends Component implements Initializable {
@@ -59,7 +56,6 @@ public class DirectorController extends Component implements Initializable {
     private Button ExpBtn;
     @FXML
     private Button CheapBtn;
-
 
     @FXML
     private TableView<Car> CarsTable;
@@ -256,9 +252,6 @@ public class DirectorController extends Component implements Initializable {
         }
     }
 
-    public void soldBtn() {
-
-    }
 
     @FXML
     public void cheapBtn() {
@@ -314,6 +307,5 @@ public class DirectorController extends Component implements Initializable {
             // Показываем стандартное сообщение об ошибке в случае неудачи
             JOptionPane.showMessageDialog(null, "Failed to load Login scene.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-
     }
 }

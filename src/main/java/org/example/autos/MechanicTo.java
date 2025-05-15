@@ -11,7 +11,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
@@ -27,7 +26,6 @@ public class MechanicTo implements Initializable {
     @FXML private Button salaryBtn;
     @FXML private Label toserviceTb;
     @FXML private Label inserviceTb;
-
     @FXML private TableView<Car> CarsTable;
     @FXML private TableColumn<Car, String> brandCol;
     @FXML private TableColumn<Car, String> modelCol;
@@ -60,7 +58,6 @@ public class MechanicTo implements Initializable {
         }
     }
 
-
     private void loadSalary() {
         String query = "SELECT total_salary FROM mechanic_salary WHERE mechanic_id = ?";
         try (PreparedStatement pst = Con.prepareStatement(query)) {
@@ -77,7 +74,6 @@ public class MechanicTo implements Initializable {
             alert.showAndWait();
         }
     }
-
 
     private void updateSalary() {
         String query = "UPDATE mechanic_salary SET total_salary = ? WHERE mechanic_id = ?";

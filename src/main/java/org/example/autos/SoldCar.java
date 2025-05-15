@@ -22,8 +22,6 @@ public class SoldCar {
         this.commision = new SimpleDoubleProperty(commission);
         this.availability = new SimpleStringProperty(availability);
     }
-
-
     public int getId() {
         return id.get();
     }
@@ -51,4 +49,5 @@ public class SoldCar {
     public String getAvailability() {
         return availability.get();
     }
+
 }

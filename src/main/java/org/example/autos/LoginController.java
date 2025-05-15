@@ -125,7 +125,6 @@ public class LoginController  {
             stage.setScene(new Scene(root));
             stage.show();
 
-
             Stage currentStage = (Stage) RoleCmb.getScene().getWindow();
             currentStage.close();
         } catch (IOException e) {

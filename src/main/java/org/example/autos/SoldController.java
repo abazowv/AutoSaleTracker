@@ -24,7 +24,6 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
-
 import javafx.scene.Node;
 
 
@@ -94,9 +93,6 @@ public class SoldController extends Component implements Initializable{
     }
 
 
-
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Connect();
@@ -109,25 +105,6 @@ public class SoldController extends Component implements Initializable{
 
         DisplaySoldCars();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public void returnBtn(ActionEvent actionEvent) {
         SoldCar selectedCar = SoldTable.getSelectionModel().getSelectedItem();
 
@@ -211,19 +188,6 @@ public class SoldController extends Component implements Initializable{
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     @FXML
     public void goToSelldCars(javafx.scene.input.MouseEvent mouseEvent) {
         try {
@@ -306,9 +270,6 @@ public class SoldController extends Component implements Initializable{
         }
 
     }
-
-
-
 }
 
 
